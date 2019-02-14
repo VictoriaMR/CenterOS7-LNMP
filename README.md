@@ -197,28 +197,25 @@ chmod -R 775 /data/mysql/
 官方推荐使用--initialize，会在错误日志中生成难以输入的临时密码，我这里使用的免密码的方式。 
 
 ### 4.1.6 设置启动文件和环境变量：
-cp /usr/local/mysql/support-files/mysql.server  /etc/init.d/mysql  
-启动数据库： 
-/etc/init.d/mysql start  
- Starting MySQL.Logging to '/data/mysql/error.log'. 
-
-加入环境变量: 
-export PATH=$PATH:/usr/local/mysql/bin 
-
-测试一下: 
-mysql --version  
-mysql  
+cp /usr/local/mysql/support-files/mysql.server  /etc/init.d/mysql  <br>
+启动数据库： <br>
+/etc/init.d/mysql start  <br>
+ 出现 Starting MySQL.Logging to '/data/mysql/error.log'. <br>
+加入环境变量: <br>
+export PATH=$PATH:/usr/local/mysql/bin <br>
+测试一下: <br>
+mysql --version  <br>
+mysql  <br>
 <p align='left' style="margin-left:30px;">
 <img src='images/2030.png?raw=true' title='images' style='max-width:600px'></img>
-
-到此 mysql 数据库已经安装好了 这里建一个快照 
-
-想要宿主可以链接本数据库  还需要开放一下3306端口
-firewall-cmd --zone=public --add-port=3306/tcp --permanent 
-firewall-cmd --reload 
-如果不行的话应该是mysql 的权限没有刷新 
-mysql 
-flush privileges; 
+</p>
+到此 mysql 数据库已经安装好了 这里建一个快照 <br>
+想要宿主可以链接本数据库  还需要开放一下3306端口<br>
+firewall-cmd --zone=public --add-port=3306/tcp --permanent <br>
+firewall-cmd --reload <br>
+如果不行的话应该是mysql 的权限没有刷新 <br>
+mysql <br>
+flush privileges; <br>
 
 --------------------- 
 部分参考

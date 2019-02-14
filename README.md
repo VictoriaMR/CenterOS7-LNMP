@@ -2,26 +2,25 @@
 
 ### 选择虚拟机安装 VMware Workstation 14 + CenterOS7 64 mini
 这里安装的是 纯命令行的CenterOS7 短小精悍 <br />
-<p align='left' style="margin-left:30px";>
-<img src='images/20190213113659.png?raw=true' title='images' style='max-width:600px'></img>
+<p align='left' style="margin-left:30px;">
+<img src='images/20190213113659.png?raw=true' title='images' style='max-width:600px'>
 </p>
 这里使用 WinSCP 来链接 linux <br />
 在宿主端下载好文件直接传过去 不用命令行wget 也可以使用winSCP 远程编辑保存<br />
-<p align='left' style="margin-left:30px";>
-<img src='images/2024.png?raw=true' title='images' style='max-width:600px'></img>
-<img src='images/2025.png?raw=true' title='images' style='max-width:600px'></img>
+<p align='left' style="margin-left:30px;">
+<img src='images/2024.png?raw=true' title='images' style='max-width:600px'>
+<img src='images/2025.png?raw=true' title='images' style='max-width:600px'>
 </p>
-
+<br />
 ### 步骤解读：
 错误标注: <br />
 开机错误,原因是服务未开 <br />
-<p align='left' style="margin-left:30px";>
+<p align='left' style="margin-left:30px;">
 <img src='images/2019.png?raw=true' title='images' style='max-width:600px'></img>
 </p>
-
-看这个界面是不是贼简单 没办法 只有一丁点的内存就节省着用吧 <br />
-<p align='left' style="margin-left:30px";>
-<img src='images/2020.png?raw=true' title='images' style='max-width:600px'></img>
+看这个界面是不是贼简单 没办法 只有一丁点的内存就节省着用吧
+<p align='left' style="margin-left:30px;">
+<img src='images/2020.png?raw=true' title='images' style='max-width:600px'>
 </p>
 <br />
 #一、初始化环境(这里建一个快照吧)
@@ -87,7 +86,7 @@ netstat -anp | grep 80 <br />
 yum install net-tools <br />
 
 启动成功了!!<br />
-<p align='left' style="margin-left:30px";>
+<p align='left' style="margin-left:30px;">
 <img src='images/2021.png?raw=true' title='images' style='max-width:600px'></img>
 </p>
 
@@ -95,7 +94,7 @@ yum install net-tools <br />
 这里因为是纯净版linux,只能通过宿主端浏览器查看是否启动成功
 获取ip<br />
 ip addr show <br />
-<p align='left' style="margin-left:30px";>
+<p align='left' style="margin-left:30px;">
 <img src='images/2022.png?raw=true' title='images' style='max-width:600px'></img>
 </p>
 允许80端口通过防火墙<br />
@@ -104,7 +103,7 @@ ip addr show <br />
 firewall-cmd --zone=public --add-port=80/tcp --permanent    （--permanent永久生效，没有此参数重启后失效）<br />
 firewall-cmd --reload 重启生效配置<br />
 打开浏览器<br />
-<p align='left' style="margin-left:30px";>
+<p align='left' style="margin-left:30px;">
 <img src='images/2023.png?raw=true' title='images' style='max-width:600px'></img>
 </p>
 
@@ -122,7 +121,7 @@ cd libxml2-2.9.9<br />
 --prefix=/package/libxml2 --with-python=no <br />
 make <br />
 make install <br />
-这里--with-python=no是 不使用python
+这里--with-python=no是 不使用python <br />
 
 ###3.2 安装php
 [官方网站] http://php.net/<br />
@@ -215,7 +214,7 @@ export PATH=$PATH:/usr/local/mysql/bin<br />
 测试一下:<br />
 mysql --version <br />
 mysql <br />
-<p align='left' style="margin-left:30px";>
+<p align='left' style="margin-left:30px;">
 <img src='images/2030.png?raw=true' title='images' style='max-width:600px'></img>
 
 到此 mysql 数据库已经安装好了 这里建一个快照<br />
@@ -233,7 +232,7 @@ flush privileges;<br />
 
 #五、 配置Nginx+PHP
 ###5.1 修改nginx.conf
-<p align='left' style="margin-left:30px";>
+<p align='left' style="margin-left:30px;">
 <img src='images/2031.png?raw=true' title='images' style='max-width:600px'></img>
 如图所示 , 把注释去掉 , 意思是脚本交给 php 去处理<br />
 
@@ -250,13 +249,12 @@ cp www.conf.default www.conf <br />
 /lnmp/php/sbin/php-fpm -c /lnmp/php/etc/php.ini <br />
 
 注:打开浏览器php文件出现file not found 的情况,而html正常 则是php解析路径没有配好
-<p align='left' style="margin-left:30px";>
+<p align='left' style="margin-left:30px;">
 <img src='images/2033.png?raw=true' title='images' style='max-width:600px'></img>
 </p>
 
 到这里 lnmp 环境算是初步搭建完成了
-
-<p align='left' style="margin-left:30px";>
+<p align='left' style="margin-left:30px;">
 <img src='images/2034.png?raw=true' title='images' style='max-width:600px'></img>
 </p>
 

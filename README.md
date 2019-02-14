@@ -1,11 +1,11 @@
 # Build-UP-CenterOS-7-LNMP
 
 ### 选择虚拟机安装 VMware Workstation 14 + CenterOS7 64 mini
-这里安装的是 纯命令行的CenterOS7 短小精悍
+这里安装的是 纯命令行的CenterOS7 短小精悍 <br />
 <p align='left' style="margin-left:30px";>
 <img src='images/20190213113659.png?raw=true' title='images' style='max-width:600px'></img>
 </p>
-这里使用 WinSCP 来链接 linux
+这里使用 WinSCP 来链接 linux <br />
 在宿主端下载好文件直接传过去 不用命令行wget 也可以使用winSCP 远程编辑保存<br />
 <p align='left' style="margin-left:30px";>
 <img src='images/2024.png?raw=true' title='images' style='max-width:600px'></img>
@@ -13,27 +13,27 @@
 </p>
 
 ### 步骤解读：
-错误标注:
-开机错误,原因是服务未开
+错误标注: <br />
+开机错误,原因是服务未开 <br />
 <p align='left' style="margin-left:30px";>
 <img src='images/2019.png?raw=true' title='images' style='max-width:600px'></img>
 </p>
 
-看这个界面是不是贼简单 没办法 只有一丁点的内存就节省着用吧
+看这个界面是不是贼简单 没办法 只有一丁点的内存就节省着用吧 <br />
 <p align='left' style="margin-left:30px";>
 <img src='images/2020.png?raw=true' title='images' style='max-width:600px'></img>
 </p>
-
+<br />
 #一、初始化环境(这里建一个快照吧)
 ###1.1 安装或更新gcc gcc-c++
 因为我安装的Centos是绝对纯洁滴。啥也没有。没辙了。只有先安装个编译器了。<br />
-yum install gcc gcc-c++
+yum install gcc gcc-c++ <br />
 
 ###1.2 创建需要使用的目录
 source 是用来存放源码的文件夹。package是用来存放编译后的库文件。lnmp是我们真正需要的东西才放里面。（nginx+mysql+php）<br />
-mkdir /source<br />
-mkdir /package<br />
-mkdir /lnmp<br />
+mkdir /source <br />
+mkdir /package <br />
+mkdir /lnmp <br />
 #二、开始安装（nginx篇）
 
 ###2.1 解压pcre
@@ -76,8 +76,8 @@ make install <br />
 ###小章总结：<br />
 
 此处告一段落，nginx安装完成。我们可以先满足下自己的欲望心。打开nginx服务看看Hello World吧。<br />
-这里是纯命令行版的 怎么查看是否成功启动了nginx呢<br />
-启动nginx:<br />
+这里是纯命令行版的 怎么查看是否成功启动了nginx呢 <br />
+启动nginx: <br />
 /lnmp/nginx/sbin/nginx <br />
 查看进程:<br />
 ps -ef | grep nginx <br />

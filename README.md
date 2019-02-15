@@ -184,7 +184,7 @@ log_timestamps                 = SYSTEM
 lower_case_table_names         = 1  
 default-authentication-plugin  =mysql_native_password  
  
-###4.1.4 创建目录授权等：
+### 4.1.4 创建目录授权等：
 groupadd mysql  
 useradd mysql  
 mkdir -p /data/mysql  
@@ -248,6 +248,8 @@ cp www.conf.default www.conf
 <p align='left' style="margin-left:30px;">
 <img src='images/2034.png?raw=true' title='images' style='max-width:600px'></img>
 </p>
+
+
 
 
 
